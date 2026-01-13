@@ -3,8 +3,6 @@ name: Build Portfolio PDF
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -23,17 +21,17 @@ jobs:
 
       - name: Move PDF to repo root
         run: |
-          cp latex/main.pdf Algorithms-Portfolio.pdf
+          cp latex/main.pdf Quantitative-Developer-Preparation.pdf
 
       - name: Commit PDF to repo (if changed)
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          if git diff --quiet Algorithms-Portfolio.pdf; then
+          if git diff --quiet Quantitative-Developer-Preparation.pdf; then
             echo "PDF unchanged — no commit needed."
           else
-            git add Algorithms-Portfolio.pdf
+            git add Quantitative-Developer-Preparation.pdf
             git commit -m "Update portfolio PDF [skip ci]"
             git push
           fi
