@@ -1,0 +1,39 @@
+name: Build Portfolio PDF
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build LaTeX (latexmk)
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: latex
+          root_file: main.tex
+
+      - name: Move PDF to repo root
+        run: |
+          cp latex/main.pdf Algorithms-Portfolio.pdf
+
+      - name: Commit PDF to repo (if changed)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          if git diff --quiet Algorithms-Portfolio.pdf; then
+            echo "PDF unchanged — no commit needed."
+          else
+            git add Algorithms-Portfolio.pdf
+            git commit -m "Update portfolio PDF [skip ci]"
+            git push
+          fi
