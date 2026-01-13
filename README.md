@@ -1,4 +1,4 @@
-![Build PDF](https://github.com/rmcmillan34/algorithms-portfolio/actions/workflows/build-pdf.yml/badge.svg)
+![Build PDF](https://github.com/rmcmillan34/quant-dev-prep/actions/workflows/build-pdf.yml/badge.svg)
 ![LaTeX](https://img.shields.io/badge/LaTeX-Portfolio-lightgrey)
 ![Version](https://img.shields.io/badge/version-v0.1-informational)
 
