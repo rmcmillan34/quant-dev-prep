@@ -7,8 +7,10 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{fancyhdr}
+\usepackage{fancyhdr} % Headers and footers
 \usepackage{caption}
+\usepackage{tikz} % Diagram Support
+\usepackage[ruled,vlined]{algorithm2e} % Psuedocode Support
 
 \definecolor{codebg}{RGB}{245,245,245}
 \definecolor{codekeyword}{RGB}{0,0,150}
@@ -52,13 +54,16 @@
 \pagestyle{fancy}
 
 \captionsetup[lstlisting]{font=small}
-\fancyhf{}
 
+%fancy header and footer configuration
+\fancyhf{}
 \fancyhead[C]{Quantitative Developer Preparatiom}
 \fancyfoot[L]{\small Ryan McMillan}
 \fancyfoot[C]{\small \thepage}
 \fancyfoot[R]{\small v0.1}
-
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.3pt}
+
+%Tikz configuration
+\usetikzlibrary{arrows.meta, positioning}
 
