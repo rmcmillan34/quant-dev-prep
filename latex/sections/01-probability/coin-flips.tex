@@ -1,22 +1,22 @@
-\section{Coin Flips: Simulation vs Expectation}
+\subsection{Coin Flips: Simulation vs Expectation}
 
-\subsection*{Problem}
+\subsubsection*{Problem}
 Flip a fair coin $n$ times. Let $X$ be the number of heads.
 What is $\mathbb{E}[X]$?
 How could we sanity-check the result via simulation?
 
-\subsection*{Assumptions}
+\subsubsection*{Assumptions}
 \begin{itemize}
   \item The coin is fair: $P(\text{Heads}) = P(\text{Tails}) = \tfrac{1}{2}$.
   \item Flips are independent.
 \end{itemize}
 
-\subsection*{Intuition}
+\subsubsection*{Intuition}
 Each flip contributes either $1$ head or $0$ heads.
 On average, a single flip contributes $\tfrac{1}{2}$ head, so across $n$ flips
 we expect about $\tfrac{n}{2}$ heads.
 
-\subsection*{Reasoning}
+\subsubsection*{Reasoning}
 Write $X = \sum_{i=1}^{n} I_i$, where $I_i = 1$ if flip $i$ is heads and $0$
 otherwise.
 
@@ -29,7 +29,7 @@ and since $\mathbb{E}[I_i] = P(I_i = 1) = \tfrac{1}{2}$ for a fair coin:
 \mathbb{E}[X] = n \cdot \tfrac{1}{2} = \tfrac{n}{2}.
 \]
 
-\subsection*{Procedure (Simulation Pseudocode)}
+\subsubsection*{Procedure (Simulation Pseudocode)}
 \begin{algorithm}[H]
 \caption{Monte Carlo sanity check for $\mathbb{E}[X]$}
 \KwIn{$n$ flips per trial, $T$ trials}
@@ -49,14 +49,14 @@ and since $\mathbb{E}[I_i] = P(I_i = 1) = \tfrac{1}{2}$ for a fair coin:
 \Return $\textbf{sumHeads} / T$\;
 \end{algorithm}
 
-\subsection*{Sanity Check}
+\subsubsection*{Sanity Check}
 \begin{itemize}
   \item For $n=1$, $\mathbb{E}[X] = 0.5$ makes sense.
   \item For large $n$, the estimate should concentrate near $n/2$.
   \item If you plot the histogram of heads across trials, it should look roughly binomial.
 \end{itemize}
 
-\subsection*{Takeaway}
+\subsubsection*{Takeaway}
 For $n$ independent fair coin flips, the expected number of heads is:
 \[
 \mathbb{E}[X] = \tfrac{n}{2}.
