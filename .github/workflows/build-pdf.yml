@@ -31,7 +31,7 @@ jobs:
           if git diff --quiet Quant-Dev-Prep.pdf; then
             echo "PDF unchanged — no commit needed."
           else
-            git add Quantitative-Developer-Preparation.pdf
+            git add Quant-Dev-Prep.pdf
             git commit -m "Update portfolio PDF [skip ci]"
             git push
           fi
