@@ -1,25 +1,38 @@
 ![Build PDF](https://github.com/rmcmillan34/algorithms-portfolio/actions/workflows/build-pdf.yml/badge.svg)
-![C++](https://img.shields.io/badge/C%2B%2B-primary-blue)
 ![LaTeX](https://img.shields.io/badge/LaTeX-Portfolio-lightgrey)
 ![Version](https://img.shields.io/badge/version-v0.1-informational)
 
 
-# Algorithms Portfolio
+# Quantitative Reasoning & Interview Preparation
 
-A curated computer science algorithms portfolio demonstrating:
-- algorithm design and implementation (C++ primary, Python secondary where useful)
-- correctness reasoning and edge-case handling
-- time and space complexity analysis
-- clear technical communication via a compiled LaTeX "book"
+A lightweight LaTeX “book” capturing quant-style reasoning problems in a
+whiteboard-first, conversational style.
 
-## What to look at
+This repository focuses on:
+- probabilistic reasoning
+- estimation under uncertainty
+- intuition and assumptions
+- sanity checks
+- optional pseudocode for simulation-style verification
 
-- **Portfolio PDF**: built automatically via GitHub Actions
-- **Curated problems**: `problems/`
-- **LaTeX Sources**: `latex/`
+> This is not a trading strategy repository and does not contain backtests,
+signals, or performance claims.
 
-## Scope
-This portfolio focuses on high-signal algorithmic patterns relevant to high-end software engineering and quantitative development: hashing, two pointers, sliding window, binary search, stacks and queues, trees, graphs, greedy methods, and dynamic programming.
+## Writing Philosophy
+
+This document captures **cleaned-up reasoning**, not raw working.
+
+Each problem is written as if explaining it on a whiteboard:
+- restate the problem
+- state assumptions explicitly
+- explain intuition first
+- formalise only what is necessary
+- sanity-check the result
+- end with a clear takeaway
+
+False starts, working out, and exploratory calculations are done offline and are not included in the book.
 
 ## Build
-The PDF is generated automatically on each push to the main branch. Local builds are supported via a simple bash script.
+
+The PDF is generated automatically on each push via GitHub Actions and committed
+to the repo root for easy viewing.
