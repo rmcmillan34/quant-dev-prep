@@ -21,14 +21,14 @@ jobs:
 
       - name: Move PDF to repo root
         run: |
-          cp latex/main.pdf Quantitative-Developer-Preparation.pdf
+          cp latex/main.pdf Quant-Dev-Prep.pdf
 
       - name: Commit PDF to repo (if changed)
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          if git diff --quiet Quantitative-Developer-Preparation.pdf; then
+          if git diff --quiet Quant-Dev-Prep.pdf; then
             echo "PDF unchanged — no commit needed."
           else
             git add Quantitative-Developer-Preparation.pdf
